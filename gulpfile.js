@@ -14,7 +14,7 @@ gulp.task('styles', function () {
         .pipe(concatCSS("styles.css"))
         .pipe(minifyCSS({keepBreaks:false}))
         .pipe(rename({suffix:".min"}))
-        .pipe(gulp.dest('./public'));
+        .pipe(gulp.dest('./public/assets'));
 });
 
 gulp.task('scripts', function () {
@@ -22,7 +22,7 @@ gulp.task('scripts', function () {
         .pipe(concatJS("scripts.js"))
         .pipe(uglify())
         .pipe(rename({suffix:".min"}))
-        .pipe(gulp.dest('./public'));
+        .pipe(gulp.dest('./public/assets'));
 });
 
 gulp.task('default', ['styles', 'scripts']);
