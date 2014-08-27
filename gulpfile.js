@@ -6,7 +6,9 @@ var gulp = require('gulp'),
     minifyCSS = require('gulp-minify-css'),
     concatCSS = require('gulp-concat-css'),
     rename = require('gulp-rename'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+
+    watch = require('gulp-watch');
 
 gulp.task('styles', function () {
     gulp.src('./dev/styles/*.scss')
@@ -25,4 +27,9 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('./public/assets'));
 });
 
-gulp.task('default', ['styles', 'scripts']);
+gulp.task('watch', function() {
+    gulp.watch('./dev/styles/*.scss', ['styles']);
+    gulp.watch('./dev/js/*.js', ['scripts']);
+});
+
+gulp.task('default', ['watch']);

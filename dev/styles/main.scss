@@ -1,7 +1,19 @@
 $font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
+$primary-color: #ff00ff;
 
 body {
-  font: 100% $font-stack;
-  color: $primary-color;
+  background: url("img/background.png");
+}
+
+.wrapper {
+  background: white;
+  max-width: 1000px;
+  min-height: 200px;
+  margin: 50px auto;
+}
+
+h1 {
+  font: 24px "Segoe UI";
+  text-align: center;
+  text-transform: uppercase;
 }
