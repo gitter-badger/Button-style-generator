@@ -1,0 +1,13 @@
+{
+    "name": "Button-style-generator",
+    "version": "0.1.0",
+    "devDependencies": {
+        "gulp": "latest",
+        "gulp-minify-css": "latest",
+        "gulp-sass": "latest",
+        "gulp-concat-css": "latest",
+        "gulp-rename": "latest",
+        "gulp-concat": "latest",
+        "gulp-uglify": "latest"
+    }
+}
