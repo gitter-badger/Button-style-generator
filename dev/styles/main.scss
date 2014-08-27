@@ -1,8 +1,11 @@
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #ff00ff;
-
 body {
   background: url("img/background.png");
+}
+
+h1 {
+  font: 24px "Segoe UI";
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .wrapper {
@@ -12,8 +15,12 @@ body {
   margin: 50px auto;
 }
 
-h1 {
-  font: 24px "Segoe UI";
-  text-align: center;
-  text-transform: uppercase;
+.generator {
+  font-size: 0;
+
+  div {
+    width: 50%;
+    display: inline-block;
+    font-size: 10px;
+  }
 }
