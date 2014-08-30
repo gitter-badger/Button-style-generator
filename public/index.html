@@ -14,7 +14,7 @@
     <div class="container">
         <h1 class="col-md-12 text-center">CSS 3 Button Generator</h1>
 
-        <div ng-controller="GreetingController" class="generator">
+        <div class="generator" ng-controller="generatorOptions">
             <div class="generator__options col-md-6">
                 <h3>Options</h3>
                 <div ng-include src="'views/options.html'"></div>
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <div class="generator__preview col-md-12">
+        <div class="generator__preview col-md-12" ng-controller="generatorResult">
             <div ng-include src="'views/result.html'"></div>
         </div>
     </div>
