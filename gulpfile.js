@@ -22,7 +22,7 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
     gulp.src('./dev/js/*.js')
         .pipe(concatJS("scripts.js"))
-        .pipe(uglify())
+//        .pipe(uglify())
         .pipe(rename({suffix:".min"}))
         .pipe(gulp.dest('./public/assets'));
 });

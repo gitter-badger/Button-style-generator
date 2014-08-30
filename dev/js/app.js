@@ -5,7 +5,3 @@ var control = angular.module('control', []);
 control.controller('GreetingController', function ($scope) {
     $scope.greeting = 'Hola!';
 });
-/**
- * Created by HTML on 27.08.2014.
- */
-
