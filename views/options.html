@@ -2,7 +2,9 @@
     <li>
         <div class="col-sm-4 text-right">Border-radius</div>
         <div class="col-sm-8">
-            <input ng-model="borderRadius" type="range" min="0" max="100" step="1" value="50">
+            <input ng-model="buttonStyle.border" ng-change="updateButtonStyle(buttonStyle)" type="range" min="0" max="100" step="1" value="50">
+
+            {{buttonStyle}}
         </div>
     </li>
 
