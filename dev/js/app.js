@@ -4,25 +4,22 @@ var control = angular.module('control', []);
 
 control.controller('generatorOptions', function ($scope) {
 
-    console.log($scope.buttonStyle);
-
     $scope.buttonStyle = {
-        "width" : "900px",
-        "background" : "red"
+        "width" : "50",
+        "background" : "#ffffff",
+        "border": "20"
+    };
+
+    $scope.updateButtonStyle = function(i) {
+        $scope.width = buttonStyle.width;
+        $scope.background = buttonStyle.background;
+        $scope.border = buttonStyle.border;
     };
 
 });
 
 control.controller('generatorResult', function ($scope) {
-//    $scope.greeting = 'Hola!';
 
-    $scope.buttonStyle = 'Hol3a';
+    $scope.buttonStyle = 'Yo yo yo!';
 
 });
-
-
-//<div ng-style="{ 'width' : width, 'background' : bgColor }"></div>
-//And then in your controller:
-//
-//    $scope.width = '900px';
-//$scope.bgColor = 'red';

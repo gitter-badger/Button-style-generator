@@ -13,3 +13,23 @@ body {
   border: 1px solid #BEBACF;
   margin-top: 50px;
 }
+
+input[type=range] {
+  -webkit-appearance: none;
+  background: #848484;
+  width: 200px;
+  height: 9px;
+
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.23);
+  border-radius: 5px;
+  border-radius: 0\9;
+  position: relative;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: url(img/slider-thumb.png);
+  width: 25px;
+  height: 27px;
+}
