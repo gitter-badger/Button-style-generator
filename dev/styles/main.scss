@@ -3,7 +3,12 @@ $link-hover-color: #2A6496;
 
 body {
   background: url("img/background.png");
+  font-family: bitstream_vera_sansroman;
 }
+
+h2 {
+}
+
 
 a {
   border-bottom: 1px dashed $link-color;
@@ -48,4 +53,23 @@ input[type="range"]::-webkit-slider-thumb {
   background: url(img/slider-thumb.png);
   width: 25px;
   height: 27px;
+}
+
+.generator > div {
+  padding-bottom: 20px;
+}
+
+.generator__options {
+  font-size: 18px;
+  line-height: 32px;
+}
+
+//Generated
+button {
+  border: 2px solid rgb(77, 136, 54);
+  padding: 5px 16px;
+  background: #99D69E;
+  border-radius: 4px;
+  font-size: 17px;
+  color: rgb(70, 112, 55);
 }
