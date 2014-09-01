@@ -1,5 +1,16 @@
+$link-color: #428BCA;
+$link-hover-color: #2A6496;
+
 body {
   background: url("img/background.png");
+}
+
+a {
+  border-bottom: 1px dashed $link-color;
+}
+a:hover {
+  border-bottom: 1px dashed $link-hover-color;
+  text-decoration: none;
 }
 
 .container {
@@ -14,10 +25,14 @@ body {
   margin-top: 50px;
 }
 
+ul {
+  list-style: none;
+}
+
 input[type=range] {
   -webkit-appearance: none;
   background: #848484;
-  width: 200px;
+  width: 100%;
   height: 9px;
 
   box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.23);
@@ -25,6 +40,7 @@ input[type=range] {
   border-radius: 0\9;
   position: relative;
   outline: none;
+  margin: 12px 0;
 }
 
 input[type="range"]::-webkit-slider-thumb {
