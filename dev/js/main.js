@@ -23,7 +23,7 @@ $(function() {
         "Scala",
         "Scheme"
     ];
-    $( "#parametres__add" ).autocomplete({
+    $( "#hparametres__add" ).autocomplete({
         source: availableTags
     });
 
