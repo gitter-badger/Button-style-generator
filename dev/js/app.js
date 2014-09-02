@@ -2,26 +2,11 @@ angular.module('app', ['control']);
 
 var control = angular.module('control', []);
 
-control.controller('generatorOptions', function ($scope) {
+control.controller('generatorOptions', function ($http, $scope) {
 
-    $scope.buttonStyle = {
-        "width" : "50",
-        "background" : "#ffffff",
-        "border": "20"
-    };
-
-    $scope.updateButtonStyle = function(buttonStyle) {
-        $scope.width = buttonStyle.width;
-        $scope.background = buttonStyle.background;
-        $scope.border = buttonStyle.border;
-    };
+    $http.get('buttons.json')
+        .then(function(res){
+            $scope.buttonStyles = res.data;
+    });
 
 });
-
-control.controller('generatorResult', function ($scope) {
-
-    $scope.buttonStyle = 'Yo yo yo!';
-
-});
-
-//http://codepen.io/TheSisb/full/ElLhn
