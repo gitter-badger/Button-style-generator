@@ -1,7 +1,10 @@
-<ol class="example-animate-container">
+<ol class="parametres" ng-repeat="button in buttonStyles" id="the-basics">
     <li>.button {</li>
-    <li class="animate-repeat" ng-repeat="button in buttonStyles">
-    {{button.name}} who is {{friend.age}} years old {{button.parametres.padding}}.
+    <li ng-repeat="(key, data) in button.parametres">
+            {{key}}: {{data}}
     </li>
+
     <li>}</li>
 </ol>
+
+<input class="parametres__add" placeholder="Add parameter" type="text" />

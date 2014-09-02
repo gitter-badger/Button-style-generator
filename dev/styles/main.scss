@@ -34,6 +34,7 @@ ul {
   list-style: none;
 }
 
+
 input[type=range] {
   -webkit-appearance: none;
   background: #848484;
@@ -72,4 +73,10 @@ button {
   border-radius: 4px;
   font-size: 17px;
   color: rgb(70, 112, 55);
+}
+
+input.parametres__add {
+  border: none;
+  outline: none;
+  border-bottom: 1px dashed #87A4C9;
 }

@@ -33,4 +33,4 @@ PR_NOCODE:"nocode",PR_PLAIN:"pln",PR_PUNCTUATION:"pun",PR_SOURCE:"src",PR_STRING
         // Запускаем code pretty
         window.prettyPrint && prettyPrint()
     })
-}(window.jQuery)
+}(window.jQuery);
