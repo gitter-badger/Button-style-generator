@@ -1,10 +1,9 @@
-<ol class="parametres" ng-repeat="button in buttonStyles" id="the-basics">
+<ol class="parametres" ng-repeat="button in buttonStyles | filter:{id: buttonId}" id="the-basics">
     <li>.button {</li>
     <li ng-repeat="(key, data) in button.parametres">
             {{key}}: {{data}}
     </li>
-
     <li>}</li>
 </ol>
 
-<input class="parametres__add" placeholder="Add parameter" type="text" />
+<angucomplete placeholder="Add parameter" pause="0" localdata="buttonStyles" searchfields="name" titlefield="nae" minlength="1" inputclass="parametres__add" matchclass="highlight" />

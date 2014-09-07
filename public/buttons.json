@@ -1,6 +1,6 @@
 [
     {
-    "name":"Sample",
+    "id": 1,
     "parametres":
     {
         "padding": "1px solid black",
@@ -8,7 +8,15 @@
     }
     },
     {
-    "name":"John",
+    "id": 2,
+    "parametres":
+    {
+        "padding": "1px solid black",
+        "width": "300px"
+    }
+    },
+    {
+    "id": 3,
     "parametres":
     {
         "padding": "1px solid black",
@@ -16,15 +24,7 @@
     }
     },
     {
-    "name":"John",
-    "parametres":
-    {
-        "padding": "1px solid black",
-        "width": "200px"
-    }
-    },
-    {
-    "name":"John",
+    "id": 4,
     "parametres":
     {
         "padding": "1px solid black",
