@@ -20,9 +20,12 @@
 
 }(angular));
 
+
+
+
 angular.module('app', ['control']);
 
-var control = angular.module('control', ["ngTouch", "ngRoute"]);
+var control = angular.module('control', ["ngTouch", "ngRoute", "ngLoadScript"]);
 
 control.controller('generatorOptions', function ($http, $scope, $filter, $routeParams) {
 
@@ -39,21 +42,23 @@ control.controller('generatorOptions', function ($http, $scope, $filter, $routeP
 
 });
 
-control.directive('addParameter', function($timeout) {
+control.directive('customAutocomplete', function () {
     return {
-        link: function(scope, element, attrs) {
-            element.bind('click', function() {
-                $timeout(function() {
-                    var otherElement = document.querySelector('#' + attrs.addParameter);
+        link : function (scope, element, attrs) {
+            var $element = angular.element(element),
+                availableTutorials = [
+                    "width",
+                    "padding",
+                    "margin",
+                    "box-shadow",
+                    "text-shadow"
+                ];
 
-                    if (otherElement) {
-                        otherElement.focus();
-                    }
-                    else {
-                        console.log("Can't find element: " + attrs.addParameter);
-                    }
 
-                });
+            $element.autocomplete({
+                source: availableTutorials,
+                autoFocus:true,
+                delay: 0
             });
         }
     };

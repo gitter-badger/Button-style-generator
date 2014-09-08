@@ -3,21 +3,6 @@
     <li ng-repeat="(key, data) in button.parametres">
             <div class="parametres__key">{{key}}</div>: {{data}};
     </li>
-    <li><input id="hiddenInput" type="text"/></li>
+    <li><input class="parametres__key" custom-autocomplete id="hiddenInput" type="text"/>: <input type="text"/>;</li>
     <li>}</li>
 </ol>
-
-<script>
-    $(function() {
-        var availableTutorials = [
-            "ActionScript",
-            "Boostrap",
-            "C",
-            "C++",
-        ];
-        $( "#hiddenInput" ).autocomplete({
-            source: availableTutorials,
-            autoFocus:true
-        });
-    });
-</script>
