@@ -1,9 +1,23 @@
-<ol class="parametres" ng-repeat="button in buttonStyles | filter:{id: buttonId}" id="the-basics">
+<ol class="parametres" ng-repeat="button in buttonStyles | filter:{id: buttonId}" add-parameter="hiddenInput">
     <li>.button {</li>
     <li ng-repeat="(key, data) in button.parametres">
-            {{key}}: {{data}}
+            <div class="parametres__key">{{key}}</div>: {{data}};
     </li>
+    <li><input id="hiddenInput" type="text"/></li>
     <li>}</li>
 </ol>
 
-<angucomplete placeholder="Add parameter" pause="0" localdata="buttonStyles" searchfields="name" titlefield="nae" minlength="1" inputclass="parametres__add" matchclass="highlight" />
+<script>
+    $(function() {
+        var availableTutorials = [
+            "ActionScript",
+            "Boostrap",
+            "C",
+            "C++",
+        ];
+        $( "#hiddenInput" ).autocomplete({
+            source: availableTutorials,
+            autoFocus:true
+        });
+    });
+</script>

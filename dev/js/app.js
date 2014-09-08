@@ -1,6 +1,28 @@
+/*global angular */
+(function (ng) {
+    'use strict';
+
+    var app = ng.module('ngLoadScript', []);
+
+    app.directive('script', function() {
+        return {
+            restrict: 'E',
+            scope: false,
+            link: function(scope, elem, attr) {
+                if (attr.type === 'text/javascript-lazy') {
+                    var code = elem.text();
+                    var f = new Function(code);
+                    f();
+                }
+            }
+        };
+    });
+
+}(angular));
+
 angular.module('app', ['control']);
 
-var control = angular.module('control', ["ngTouch", "ngRoute", "angucomplete"]);
+var control = angular.module('control', ["ngTouch", "ngRoute"]);
 
 control.controller('generatorOptions', function ($http, $scope, $filter, $routeParams) {
 
@@ -9,13 +31,31 @@ control.controller('generatorOptions', function ($http, $scope, $filter, $routeP
             $scope.buttonStyles = res.data;
     });
 
-    $scope.buttonId = $routeParams.buttonId;
+    if($routeParams.buttonId == undefined) {
+        $scope.buttonId = 1;
+    } else {
+        $scope.buttonId = $routeParams.buttonId;
+    }
 
 });
 
-control.directive('options', function() {
+control.directive('addParameter', function($timeout) {
     return {
-        templateUrl: 'views/options.html'
+        link: function(scope, element, attrs) {
+            element.bind('click', function() {
+                $timeout(function() {
+                    var otherElement = document.querySelector('#' + attrs.addParameter);
+
+                    if (otherElement) {
+                        otherElement.focus();
+                    }
+                    else {
+                        console.log("Can't find element: " + attrs.addParameter);
+                    }
+
+                });
+            });
+        }
     };
 });
 

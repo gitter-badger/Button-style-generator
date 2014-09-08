@@ -30,9 +30,45 @@ a:hover {
   margin: 50px auto;
 }
 
-ul {
-  list-style: none;
+ol.parametres {
+
+  cursor: text;
+
+  li {
+    position: relative;
+    counter-increment: ol-counter;
+    color: #965454;
+
+  &:before {
+    content: counter(ol-counter);
+    position: absolute;
+    top: 0;
+    left: -31px;
+    -webkit-user-select: none;
+    background: #F5F5F5;
+    border-right: 1px solid rgb(190, 190, 190);
+    padding: 0 6px;
+    font-size: 12px;
+    color: rgb(155, 155, 155);
+  }
+
+  .parametres__key {
+    display: inline-block;
+    margin-left: 20px;
+    color: #08A3B8;
+  }
+
+  input{
+    border: none;
+    outline: none;
+    margin: -1px 20px;
+   }
+
+  }
+
 }
+
+
 
 
 input[type=range] {
@@ -73,10 +109,4 @@ button {
   border-radius: 4px;
   font-size: 17px;
   color: rgb(70, 112, 55);
-}
-
-input.parametres__add {
-  border: none;
-  outline: none;
-  border-bottom: 1px dashed #87A4C9;
 }

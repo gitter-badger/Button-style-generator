@@ -3,8 +3,10 @@
     "id": 1,
     "parametres":
     {
-        "padding": "1px solid black",
-        "width": "200px"
+        "padding": "2px solid black",
+        "width": "200px",
+        "background": "white",
+        "margin": "0 auto"
     }
     },
     {
