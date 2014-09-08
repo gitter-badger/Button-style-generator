@@ -33,3 +33,20 @@ control.directive('ngEnter', function () {
         });
     };
 });
+
+control.directive('inputWidth', function () {
+    return function (scope, element, attrs) {
+        $.fn.textWidth = function(text, font) {
+            if (!$.fn.textWidth.fakeEl) $.fn.textWidth.fakeEl =      $('<span>').hide().appendTo(document.body);
+            $.fn.textWidth.fakeEl.text(text || this.val() || this.text()).css('font', font || this.css('font'));
+            return $.fn.textWidth.fakeEl.width();
+        };
+
+        $('#hiddenInput').on('input', function() {
+            var padding = 10; //Works as a minimum width
+            var valWidth = ($(this).textWidth() + padding) + 'px';
+            $('#'+this.id+'-width').html(valWidth);
+            $('#hiddenInput').css('width', valWidth);
+        }).trigger('input');
+    };
+});
