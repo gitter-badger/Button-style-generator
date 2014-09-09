@@ -19,4 +19,3 @@ control.config(function($routeProvider) {
             templateUrl : 'views/404.html'
         });
 });
-
