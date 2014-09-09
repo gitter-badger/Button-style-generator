@@ -4,7 +4,7 @@
     "devDependencies": {
         "gulp": "latest",
         "gulp-minify-css": "latest",
-        "gulp-sass": "latest",
+        "gulp-sass": "0.7.1",
         "gulp-concat-css": "latest",
         "gulp-rename": "latest",
         "gulp-concat": "latest",

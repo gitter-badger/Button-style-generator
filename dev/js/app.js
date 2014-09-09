@@ -2,21 +2,6 @@ angular.module('app', ['control']);
 
 var control = angular.module('control', ["ngTouch", "ngRoute"]);
 
-control.controller('generatorOptions', function ($http, $scope, $filter, $routeParams) {
-
-    $http.get('buttons.json')
-        .then(function(res){
-            $scope.buttonStyles = res.data;
-    });
-
-    if($routeParams.buttonId == undefined) {
-        $scope.buttonId = 1;
-    } else {
-        $scope.buttonId = $routeParams.buttonId;
-    }
-
-});
-
 control.config(function($routeProvider) {
     $routeProvider
 
@@ -35,4 +20,3 @@ control.config(function($routeProvider) {
         });
 });
 
-//http://jsfiddle.net/MqM76/217/

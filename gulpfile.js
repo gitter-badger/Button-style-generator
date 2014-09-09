@@ -20,7 +20,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('scripts', function () {
-    gulp.src('./dev/js/*.js')
+    gulp.src(['./dev/js/**/*.js', './dev/js/*.js',])
         .pipe(concatJS("scripts.js"))
 //        .pipe(uglify())
         .pipe(rename({suffix:".min"}))
@@ -29,7 +29,7 @@ gulp.task('scripts', function () {
 
 gulp.task('watch', function() {
     gulp.watch('./dev/styles/*.scss', ['styles']);
-    gulp.watch('./dev/js/*.js', ['scripts']);
+    gulp.watch('./dev/js/**/*.js', ['scripts']);
 });
 
 gulp.task('default', ['watch']);

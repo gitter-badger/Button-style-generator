@@ -13,6 +13,6 @@ control.controller('generatorOptions', function ($http, $scope) {
 
 control.directive('options', function() {
     return {
-        templateUrl: 'views/options.html'
+        templateUrl: 'views/parametres.html'
     };
 });

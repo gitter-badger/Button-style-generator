@@ -48,5 +48,12 @@ control.directive('inputWidth', function () {
             $('#'+this.id+'-width').html(valWidth);
             $('#hiddenInput').css('width', valWidth);
         }).trigger('input');
+
+        $('#hiddenInput2').on('input', function() {
+            var padding = 10; //Works as a minimum width
+            var valWidth = ($(this).textWidth() + padding) + 'px';
+            $('#'+this.id+'-width').html(valWidth);
+            $('#hiddenInput2').css('width', valWidth);
+        }).trigger('input');
     };
 });
