@@ -1,13 +1,14 @@
-{{buttonId}}
 <ol class="parametres" ng-repeat="button in buttonStyles | filter:{id: buttonId}" add-parameter="hiddenInput" data-ng-init="getButtonFromID(buttonId)">
     <li>.button {</li>
 
     <li ng-repeat="(key, data) in eachButton">
-        <div class="parametres__key" contenteditable="true" ng-enter="updateJSON('{{key}}')">{{key}}</div>: {{data}};
+        <div class="parametres__key" custom-autocomplete contenteditable="true" ng-enter="updateJSON('{{key}}')">{{key}}</div>:
+        <div class="parametres__data" custom-autocomplete contenteditable="true" ng-enter="updateJSON('{{data}};')">{{data}};</div>
     </li>
-    <li>
-        <input id="hiddenInput" class="parametres__key" custom-autocomplete input-width type="text"/>:
-        <input id="hiddenInput2" input-width type="text"/>;</li>
+    <li ng-show="showedAdd">
 
-    <li>}</li>
+        <div class="parametres__key" custom-autocomplete contenteditable="true" ng-enter="updateJSON('{{key}}')"></div>:
+        <div class="parametres__data" contenteditable="true"></div>;
+
+    <li class="parametres__new" ng-click="showedAdd = !showedAdd">}</li>
 </ol>
