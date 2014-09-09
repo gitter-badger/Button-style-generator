@@ -1,15 +1,15 @@
 $link-color: #428BCA;
 $link-hover-color: #2A6496;
 
+* {
+  outline: none;
+}
+
 body {
   background: url("img/background.png");
   font-family: bitstream_vera_sansroman;
   padding: 50px 30px;
 }
-
-h2 {
-}
-
 
 a {
   border-bottom: 1px dashed $link-color;
@@ -70,11 +70,16 @@ ol.parametres {
     display: inline-block;
     margin-left: 20px;
     color: #08A3B8;
-    outline: none;
+    min-width: 15px;
 
-    &:focus {
+    &[contenteditable="true"]:focus {
       background: #F1F1F1;
     }
+  }
+
+  .parametres__data {
+    display: inline-block;
+    min-width: 15px;
   }
 
   input{
@@ -88,29 +93,6 @@ ol.parametres {
 
 }
 
-
-
-
-input[type=range] {
-  -webkit-appearance: none;
-  background: #848484;
-  width: 100%;
-  height: 9px;
-
-  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.23);
-  border-radius: 5px;
-  border-radius: 0\9;
-  position: relative;
-  outline: none;
-  margin: 12px 0;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  background: url(img/slider-thumb.png);
-  width: 25px;
-  height: 27px;
-}
 
 .generator__options {
   font-size: 18px;

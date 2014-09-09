@@ -9,19 +9,14 @@ control.controller('generatorOptions', function ($http, $scope, $filter, $routeP
 //    Get JSON Data for each of button - if you know what i mean
     $scope.getButtonFromID = function(id) {
         angular.forEach( $scope.buttonStyles, function(value) {
-            if(value.id === id) {
+            if(value.id == $scope.buttonId) {
                 $scope.eachButton = value.parametres;
-                console.log($scope.eachButton);
-
-                console.log($scope.buttonId);
-            } else {
-                console.log($scope.buttonId);
             }
         })
     };
 
 //    On the main page ID should be always 1
-    if($routeParams.buttonId == undefined) {
+    if(!$routeParams.buttonId) {
         $scope.buttonId = 1;
     } else {
         $scope.buttonId = $routeParams.buttonId;
