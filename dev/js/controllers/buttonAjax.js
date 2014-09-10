@@ -31,15 +31,24 @@ control.controller('generatorOptions', function ($http, $scope, $filter, $routeP
 //    Update already existed parametres of button
     $scope.updateButton = function(key,data) {
 
-//        console.log(key);
-//        console.log(data);
-//        console.log($scope.eachButton);
+        var changedKey = key;
+        var changedData = data;
 
         angular.forEach( $scope.eachButton, function(key,data) {
-            if(value.id == $scope.buttonId) {
-                $scope.eachButton = value.parametres;
+
+//            console.log("Final", key);
+//            console.log("Final", data);
+//
+//            console.log("Changed", changedKey);
+//            console.log("Changed", changedData);
+
+            if(changedKey == data) {
+               console.log("Yo!");
+            } else {
+//             console.log("No yo!");
             }
-        })
+
+        })xdscxc
 
 //        $scope.eachButton.push({id:id,parametres[key]:key,parametres[data]:data});
     };

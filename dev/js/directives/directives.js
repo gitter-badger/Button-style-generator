@@ -20,7 +20,7 @@ control.directive('customAutocomplete', function () {
     };
 });
 
-control.directive('ngEnter', function () {
+control.directive('pressEnter', function () {
     return function (scope, element, attrs) {
         element.bind("keydown keypress", function (event) {
             if(event.which === 13) {
