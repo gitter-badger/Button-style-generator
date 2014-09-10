@@ -39,7 +39,7 @@ control.directive("contenteditable", function() {
     return {
         restrict: "A",
         require: "ngModel",
-        link: function(scope, element, attrs, ngModel, $scope) {
+        link: function(scope, element, attrs, ngModel) {
 
             function read() {
                 ngModel.$setViewValue(element.html());
@@ -51,7 +51,19 @@ control.directive("contenteditable", function() {
 
             element.bind("blur keyup change", function() {
                 scope.$apply(read);
-                console.log($scope.key);
+
+                scope.updateButton(
+//                    scope.button.id,
+                    scope.key,
+                    scope.data
+                );
+
+//                attrs.$observe('key', function(value) {
+//                    console.log(value);
+//                    console.log(scope.button.id);
+//                    console.log(scope.key);
+//                    scope.updateButton();
+//                });
             });
 
         }

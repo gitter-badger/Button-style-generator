@@ -29,8 +29,19 @@ control.controller('generatorOptions', function ($http, $scope, $filter, $routeP
     };
 
 //    Update already existed parametres of button
-    $scope.updateButton = function() {
+    $scope.updateButton = function(key,data) {
 
+//        console.log(key);
+//        console.log(data);
+//        console.log($scope.eachButton);
+
+        angular.forEach( $scope.eachButton, function(key,data) {
+            if(value.id == $scope.buttonId) {
+                $scope.eachButton = value.parametres;
+            }
+        })
+
+//        $scope.eachButton.push({id:id,parametres[key]:key,parametres[data]:data});
     };
 
 //    Remove button from Data
