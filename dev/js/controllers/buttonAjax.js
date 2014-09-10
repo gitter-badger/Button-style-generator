@@ -7,7 +7,7 @@ control.controller('generatorOptions', function ($http, $scope, $filter, $routeP
     });
 
 //    Get JSON Data for each of button - if you know what i mean
-    $scope.getButtonFromID = function(id) {
+    $scope.getButtonFromID = function() {
         angular.forEach( $scope.buttonStyles, function(value) {
             if(value.id == $scope.buttonId) {
                 $scope.eachButton = value.parametres;
