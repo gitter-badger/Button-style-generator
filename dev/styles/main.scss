@@ -5,18 +5,14 @@ $link-hover-color: #2A6496;
   outline: none;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 body {
   background: url("img/background.png");
   font-family: bitstream_vera_sansroman;
   padding: 50px 30px;
-}
-
-a {
-  border-bottom: 1px dashed $link-color;
-}
-a:hover {
-  border-bottom: 1px dashed $link-hover-color;
-  text-decoration: none;
 }
 
 .generator {
@@ -72,7 +68,7 @@ ol.parametres {
     color: #08A3B8;
     min-width: 15px;
 
-    &[contenteditable="true"]:focus {
+    &[contenteditable]:focus {
       background: #F1F1F1;
     }
   }
@@ -93,7 +89,6 @@ ol.parametres {
 
 }
 
-
 .generator__options {
   font-size: 18px;
   line-height: 32px;
@@ -102,7 +97,7 @@ ol.parametres {
 //Generated
 button {
   border: 2px solid rgb(77, 136, 54);
-  padding: 5px 16px;
+  padding: 5px 27px;
   background: #99D69E;
   border-radius: 4px;
   font-size: 17px;

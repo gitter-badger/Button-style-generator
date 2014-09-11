@@ -4,7 +4,7 @@
     "parametres":
     {
         "padding": "2px solid black",
-        "width": "200px",
+        "text-shadow": "1px 1px 0px rgba(0,0,0,.4)",
         "background": "white",
         "margin": "0 auto"
     }
@@ -14,7 +14,7 @@
     "parametres":
     {
         "padding": "1px solid black",
-        "width": "300px"
+        "text-shadow": "1px 1px 0px rgba(0,0,0,.4)"
     }
     },
     {
@@ -22,7 +22,7 @@
     "parametres":
     {
         "padding": "1px solid black",
-        "width": "200px"
+        "text-shadow": "1px 1px 0px rgba(0,0,0,.4)"
     }
     },
     {
@@ -30,7 +30,7 @@
     "parametres":
     {
         "padding": "1px solid black",
-        "width": "200px"
+        "text-shadow": "1px 1px 0px rgba(0,0,0,.4)"
     }
     }
 ]

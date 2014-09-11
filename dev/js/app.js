@@ -2,7 +2,7 @@ angular.module('app', ['control']);
 
 var control = angular.module('control', ["ngTouch", "ngRoute"]);
 
-control.config(function($routeProvider) {
+control.config(function($routeProvider, $locationProvider) {
     $routeProvider
 
         // route for the home page
@@ -23,4 +23,13 @@ control.config(function($routeProvider) {
         .otherwise({
             templateUrl : 'views/404.html'
         });
+
+    $locationProvider.html5Mode(true);
+
+});
+
+control.run(function($rootScope, $templateCache) {
+    $rootScope.$on('$viewContentLoaded', function() {
+        $templateCache.removeAll();
+    });
 });

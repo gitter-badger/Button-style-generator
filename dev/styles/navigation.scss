@@ -1,1 +1,13 @@
-.navigation{}
+.navigation{
+  text-align: center;
+
+  li {
+    display: inline-block;
+    margin: 0 30px;
+
+    &.active > a {
+      color: #F87106;
+    }
+  }
+
+}
