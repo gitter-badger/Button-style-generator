@@ -1,0 +1,11 @@
+<div ng-controller="generatorOptions">
+
+    <ol ng-repeat="button in buttonStyles">
+        <li>
+            <button ng-style="{{button.parametres}}" data-ng-init="getButtonFromID()">
+                Show
+            </button>
+        </li>
+    </ol>
+
+</div>

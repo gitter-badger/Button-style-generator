@@ -48,7 +48,7 @@ control.controller('generatorOptions', function ($http, $scope, $filter, $routeP
 //             console.log("No yo!");
             }
 
-        })xdscxc
+        })
 
 //        $scope.eachButton.push({id:id,parametres[key]:key,parametres[data]:data});
     };

@@ -7,12 +7,17 @@ control.config(function($routeProvider) {
 
         // route for the home page
         .when('/', {
-            templateUrl : 'views/container.html'
+            templateUrl : 'views/editor/container.html'
+        })
+
+        // List of buttons
+        .when('/gallery', {
+            templateUrl : 'views/gallery/list.html'
         })
 
         // route for the about page
         .when('/:buttonId', {
-            templateUrl : 'views/container.html'
+            templateUrl : 'views/editor/container.html'
         })
 
         .otherwise({

@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Generate",
+        "url": "/"
+    },
+    {
+        "name": "Gallery",
+        "url": "gallery"
+    },
+    {
+        "name": "Git source",
+        "url": "git"
+    }
+]
