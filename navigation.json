@@ -5,10 +5,6 @@
     },
     {
         "name": "Gallery",
-        "url": "gallery"
-    },
-    {
-        "name": "Git source",
-        "url": "git"
+        "url": "/gallery"
     }
 ]

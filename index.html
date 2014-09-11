@@ -21,8 +21,10 @@
             The fastest and easiest way to experiment with different Styles of Buttons
         </div>
 
+        <hr/>
+
         <ul class="navigation" ng-controller="navController">
-            <li ng-repeat="item in navigation" >
+            <li ng-class="{active: location.path() == '{{item.url}}'}" ng-repeat="item in navigation" >
                 <a href="{{item.url}}">{{item.name}}</a>
             </li>
         </ul>
