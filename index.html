@@ -21,6 +21,12 @@
             The fastest and easiest way to experiment with different Styles of Buttons
         </div>
 
+        <ul class="navigation" ng-controller="navController">
+            <li ng-repeat="item in navigation" >
+                <a href="{{item.url}}">{{item.name}}</a>
+            </li>
+        </ul>
+
         <hr/>
 
         <div ng-view></div>
