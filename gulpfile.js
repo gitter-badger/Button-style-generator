@@ -13,7 +13,7 @@ var gulp = require('gulp'),
 gulp.task('styles', function () {
     gulp.src('./dev/styles/*.scss')
         .pipe(sass())
-        .pipe(concatCSS("styles.css"))
+        .pipe(concatCSS("main.css"))
         .pipe(minifyCSS({keepBreaks:false}))
         .pipe(rename({suffix:".min"}))
         .pipe(gulp.dest('./public/assets'));
@@ -21,7 +21,7 @@ gulp.task('styles', function () {
 
 gulp.task('scripts', function () {
     gulp.src(['./dev/js/**/*.js', './dev/js/*.js',])
-        .pipe(concatJS("scripts.js"))
+        .pipe(concatJS("main.js"))
 //        .pipe(uglify())
         .pipe(rename({suffix:".min"}))
         .pipe(gulp.dest('./public/assets'));

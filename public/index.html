@@ -1,38 +1,20 @@
 <!doctype html>
-<html ng-app="app" lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 
-    <link rel="stylesheet" href="assets/styles.min.css"/>
+    <link rel="stylesheet" href="assets/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/styles/main.css"/>
 
-    <script src="lib/jquery.min.js"></script>
-    <script src="lib/jquery-ui.min.js"></script>
-    <script src="lib/angular.min.js"></script>
-    <script src="lib/angular-touch.min.js"></script>
-    <script src="lib/angular-route.min.js"></script>
-    <script src="assets/scripts.min.js"></script>
+    <script src="assets/scripts/jquery.min.js"></script>
+    <script src="assets/scripts/jquery-ui.min.js"></script>
+    <script src="assets/scripts/main.js"></script>
 </head>
 <body>
 
-    <div class="container">
-        <h2 class="col-md-12 text-center">Generate Button CSS</h2>
-        <div class="description text-center">
-            The fastest and easiest way to experiment with different Styles of Buttons
-        </div>
-
-        <hr/>
-
-        <ul class="navigation" ng-controller="navController">
-            <li ng-class="{active: location.path() == '{{item.url}}'}" ng-repeat="item in navigation" >
-                <a href="{{item.url}}">{{item.name}}</a>
-            </li>
-        </ul>
-
-        <hr/>
-
-        <div ng-view></div>
-    </div>
+    <div id="get">Width:</div>
+    <input id="border-radius" type="range" min="0" max="100" step="1" value="50">
 
 </body>
 </html>
