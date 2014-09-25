@@ -20,16 +20,16 @@ gulp.task('styles', function () {
 });
 
 gulp.task('scripts', function () {
-    gulp.src(['./dev/js/**/*.js', './dev/js/*.js',])
+    gulp.src('./dev/scripts/*.js')
         .pipe(concatJS("main.js"))
-//        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(rename({suffix:".min"}))
         .pipe(gulp.dest('./public/assets'));
 });
 
 gulp.task('watch', function() {
     gulp.watch('./dev/styles/*.scss', ['styles']);
-    gulp.watch('./dev/js/**/*.js', ['scripts']);
+    gulp.watch('./dev/scripts/*.scss', ['scripts']);
 });
 
 gulp.task('default', ['watch']);
