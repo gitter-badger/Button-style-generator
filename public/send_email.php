@@ -1,73 +1,44 @@
 <?php
 
-$htmlResult = ($_GET['htmlResult']) ?$_GET['htmlResult'] : $_POST['htmlResult'];
-$cssResult = ($_GET['cssResult']) ?$_GET['cssResult'] : $_POST['cssResult'];
-$senderEmail = ($_GET['senderEmail']) ?$_GET['senderEmail'] : $_POST['senderEmail'];
+require "mailer/PHPMailerAutoload.php";
+require "auth.php";
 
-//flag to indicate which method it uses. If POST set it to 1
-if ($_POST) $post=1;
+//Get all values
+$htmlResult = $_POST['htmlResult'];
+$cssResult = $_POST['cssResult'];
+$senderEmail = $_POST['senderEmail'];
 
-//Simple server side validation for POST data, of course, 
-//you should validate the email
-if (!$htmlResult) $errors[count($errors)] = 'Please enter your email.';
-if (!cssResult) $errors[count($errors)] = 'Please enter your message.';
+$htmlResult = stripslashes($htmlResult);
 
-//if the errors array is empty, send the mail
-if (!$errors) {
+//Then lets configure mail
+$mail = new PHPMailer;
 
-    //recipient - change this to your name and email
-    $to = $senderEmail . ' <' . $senderEmail . '>';
-    //sender
-    $from = 'Button Generator <blabla@genreratorrr.ru>';
-    
-    //subject and the html message
-    $subject = 'Button generator';
-    $message = '
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-    <html xmlns="http://www.w3.org/1999/xhtml">
-    <head></head>
-    <body>
-    <table>
-        <tr><td>Email</td><td>' . $cssResult . '</td></tr>
-        <tr><td>Comment</td><td>' . nl2br($htmlResult) . '</td></tr>
-    </table>
-    </body>
-    </html>';
+$mail->IsSMTP();
 
-    //send the mail
-    $result = sendmail($to, $subject, $message, $from);
-    
-    //if POST was used, display the message straight away
-    if ($_POST) {
-        if ($result) echo 'Thank you! We have received your message.';
-        else echo 'Sorry, unexpected error. Please try again later';
-        
-    //else if GET was used, return the boolean value so that 
-    //ajax script can react accordingly
-    //1 means success, 0 means failed
-    } else {
-        echo $result;   
-    }
+$mail->Host = 'smtp.yandex.ru';
+$mail->CharSet="UTF-8";
+$mail->SMTPDebug = 1;
+$mail->Port = 465;                                    // Set the SMTP port
+$mail->SMTPAuth = true;                               // Enable SMTP authentication// SMTP password
+$mail->SMTPSecure = 'ssl';                            // Enable encryption, 'ssl' also accepted
 
-//if the errors array has values
-} else {
-    //display the errors message
-    for ($i=0; $i<count($errors); $i++) echo $errors[$i] . '<br/>';
-    echo '<a href="form.php">Back</a>';
-    exit;
+include 'auth.php';
+
+$mail->FromName = 'Button Generator';
+
+$mail->AddAddress($senderEmail);               // Name is optional
+
+$mail->IsHTML(true);                                  // Set email format to HTML
+
+//Paste our message
+$mail->Subject = 'Generated Button';
+$mail->Body    = 'Your HTML Code: <br> ' . nl2br($htmlResult) .' <br> and CSS Code <br> ' . nl2br($cssResult);
+
+if(!$mail->Send())
+{
+    return "Message could not be sent.";
 }
 
-
-//Simple mail function with HTML header
-function sendmail($to, $subject, $message, $from) {
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
-    $headers .= 'From: ' . $from . "\r\n";
-    
-    $result = mail($to,$subject,$message,$headers);
-    
-    if ($result) return 1;
-    else return 0;
-}
+return "Message has been sent";
+//The end
 ?>

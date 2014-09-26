@@ -68,25 +68,24 @@ $(window).ready(function(){
       sendForm: function(){
 
         //Send form start
-          var htmlResult = $('#htmlResult');
+          var htmlResult = $('#htmlResult').html()+' ';
           var cssResult = $('#cssResult');
           var senderEmail = $('#sender-email');
 
-          var data = 'htmlResult=' + encodeURIComponent(htmlResult.val()) + '&cssResult=' + encodeURIComponent(cssResult.val());
+          var data = 'htmlResult=' + encodeURIComponent(htmlResult) + '&cssResult=' + encodeURIComponent(cssResult.html()) + '&senderEmail=' + senderEmail.val();
 
           $.ajax({
 
               url: "send_email.php",
-              type: "GET",
+              type: "POST",
               data: data,
               cache: false,
 
               success: function(html) {
-
                   if (html == 1) {
-                      alert('Sent');
+                      alert('Messages sent.');
                   } else {
-                      //alert('Sorry, unexpected error. Please try again later22.');
+                      alert(html);
                   }
               }
           });
