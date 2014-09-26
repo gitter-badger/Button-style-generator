@@ -29,7 +29,7 @@
                 <div class="button-preview">Button</div>
             </div>
         </div>
-        <div class="result row">
+        <form id="result_form" class="result row">
             <div class="row">
                 <div class="col-md-offset-3 col-md-3">
                     <textarea name="" id="htmlResult" readonly></textarea>
@@ -39,13 +39,13 @@
                 </div>
             </div>
             <div class="row text-center">
-                <input type="email" id="sender-email" placeholder="E-mail">
+                <input type="email" id="sender-email" placeholder="E-mail" required>
             </div>
             <div class="row text-center">
-                <button id="send-form">Send</button>
+                <input value="Send" type="submit" id="send-form"></input>
             </div>
 
-        </div>
+        </form>
 
     </div>
 </body>

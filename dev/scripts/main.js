@@ -11,7 +11,7 @@ $(window).ready(function(){
             $('#border-radius').on('change', $.proxy(this.changeBorderRadius, this));
             $('#border-width').on('change', $.proxy(this.changeBorderWidth, this));
             $('#button-text').on('keyup', $.proxy(this.changeText, this));
-            $('#send-form').on('click', app.sendForm);
+            $('#result_form').on('submit', app.sendForm);
         },
 
         preview: $('.button-preview'),
@@ -51,7 +51,12 @@ $(window).ready(function(){
               '.button-preview {\n' +
               'border-width: '          + borderRadius + ';\n' +
               'border-size: '           + borderWidth + ';\n' +
-              '};'
+              'background: '           + '#E0E0E0' + ';\n' +
+              'color: '           + '#2B3B6D' + ';\n' +
+              'padding: '           + '3px 10px' + ';\n' +
+              'border-color: '           + borderWidth + ';\n' +
+              'font-size: '           + '18px' + ';\n' +
+              '}'
           );
 
         },
@@ -82,11 +87,7 @@ $(window).ready(function(){
               cache: false,
 
               success: function(html) {
-                  if (html == 1) {
-                      alert('Messages sent.');
-                  } else {
-                      alert(html);
-                  }
+                  $('#send-form').attr('value', 'Okay, sent! Check your mail.');
               }
           });
 
